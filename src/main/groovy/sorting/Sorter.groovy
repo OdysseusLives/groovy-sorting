@@ -1,14 +1,10 @@
 package sorting
 
 class Sorter {
-    def elements
+    public Sorter() {}
 
-    public Sorter(List elements) {
-        this.elements = elements
-    }
-
-    List bubbleSort() {
-        def bubbledElements = this.elements
+    static List bubbleSort(elements) {
+        def bubbledElements = elements
 
         for (def i = 0; i < bubbledElements.size() - 1; i++) {
             bubbledElements = singlePassBubbleSort(bubbledElements)
