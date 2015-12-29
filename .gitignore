@@ -4,6 +4,8 @@ out
 # Gradle
 gradle
 .gradle
+gradlew.bat
+gradlew
 
 # IntelliJ
 .idea
