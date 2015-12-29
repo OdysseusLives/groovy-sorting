@@ -45,4 +45,16 @@ class SorterTest extends GroovyTestCase {
         assertEquals("car", results.get(1))
     }
 
+    void testBubbleSort_shouldOrderForMoreThanTwoItems() {
+        def list = ["B", "A", "D", "C"]
+
+        def sorter = new Sorter(list)
+
+        def results = sorter.bubbleSort()
+
+        assertEquals("A", results.get(0))
+        assertEquals("B", results.get(1))
+        assertEquals("C", results.get(2))
+        assertEquals("D", results.get(3))
+    }
 }
