@@ -13,6 +13,20 @@ class Sorter {
         bubbledElements
     }
 
+    static List insertionSort(List unsorted) {
+        def sorted = new ArrayList()
+
+        sorted.add(unsorted.get(0))
+
+        if(unsorted.get(1) < sorted.get(0)) {
+            sorted = [unsorted.get(1)].plus(sorted)
+        } else {
+            sorted.add(unsorted.get(1))
+        }
+
+        sorted
+    }
+
     private static List singlePassBubbleSort(List elementsToBeSorted) {
         def sortedElements = new ArrayList()
 
