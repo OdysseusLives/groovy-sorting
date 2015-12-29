@@ -1,13 +1,15 @@
 package sorting
 
 class Sorter {
-    List elementsToBeSorted
-
-    public Sorter(List elementsToBeSorted) {
-        this.elementsToBeSorted = elementsToBeSorted;
+    public Sorter() {
     }
 
-    def bubbleSort() {
+    static def bubbleSort(List elementsToBeSorted) {
+        ArrayList sortedElements = singlePassBubbleSort(elementsToBeSorted)
+        sortedElements
+    }
+
+    private static ArrayList singlePassBubbleSort(List elementsToBeSorted) {
         def sortedElements = new ArrayList()
 
         while (elementsToBeSorted.size() > 1) {
@@ -22,6 +24,7 @@ class Sorter {
                 sortedElements.add(next)
                 elementsToBeSorted.remove(next)
             }
+
         }
 
         sortedElements.add(elementsToBeSorted.get(0))
