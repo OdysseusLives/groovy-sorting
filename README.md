@@ -4,7 +4,14 @@
 
 Write a sorting app that will take 50 states and sort them 10,000 times to get the best sorting algorithm.  
 
-Sort:  
+#### Sorting algorithms:
+
+- bubble sort
+- insertion sort
+- merge sort
+- quicksort
+
+#### Sort:  
 
 - alphabetically 
 - by population size
