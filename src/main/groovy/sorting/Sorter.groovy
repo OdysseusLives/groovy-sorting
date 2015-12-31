@@ -22,7 +22,7 @@ class Sorter {
 
         for(def i = 1; i < unsorted.size(); i++) {
             def currentUnsorted = unsorted.get(i)
-            sorted = singlePassInsertionSort(currentUnsorted, sorted, 0)
+            sorted = insertionSortOneElement(currentUnsorted, sorted, 0)
         }
 
         sorted
@@ -51,17 +51,21 @@ class Sorter {
         sorted
     }
 
-    private static List<Object> singlePassInsertionSort(Object currentUnsorted, List sorted, Integer sortedIndex) {
+    private static List<Object> insertionSortOneElement(Object currentUnsorted, List sorted, Integer sortedIndex) {
         if (currentUnsorted < sorted.get(sortedIndex)) {
             sorted = sorted.plus(sortedIndex, currentUnsorted)
         } else {
-            if (sortedIndex < sorted.size() - 1) {
-                sorted = singlePassInsertionSort(currentUnsorted, sorted, sortedIndex + 1)
+            if (indexIsNotAtEndOfList(sortedIndex, sorted)) {
+                sorted = insertionSortOneElement(currentUnsorted, sorted, sortedIndex + 1)
             } else {
                 sorted.add(currentUnsorted)
             }
         }
         sorted
+    }
+
+    private static boolean indexIsNotAtEndOfList(int index, List list) {
+        index < list.size() - 1
     }
 
 }
