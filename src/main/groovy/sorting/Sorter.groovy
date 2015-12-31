@@ -51,16 +51,12 @@ class Sorter {
         sorted
     }
 
-    private static List<Object> singlePassInsertionSort(currentUnsorted, List sorted, Integer sortedCounter) {
-        if (currentUnsorted < sorted.get(sortedCounter)) {
-            if(sortedCounter.equals(0)) {
-                sorted = [currentUnsorted].plus(sorted)
-            } else {
-                sorted = sorted[0..sortedCounter - 1].plus([currentUnsorted]).plus(sorted[sortedCounter..sorted.size() - 1])
-            }
+    private static List<Object> singlePassInsertionSort(Object currentUnsorted, List sorted, Integer sortedIndex) {
+        if (currentUnsorted < sorted.get(sortedIndex)) {
+            sorted = sorted.plus(sortedIndex, currentUnsorted)
         } else {
-            if (sortedCounter < sorted.size() - 1) {
-                sorted = singlePassInsertionSort(currentUnsorted, sorted, sortedCounter + 1)
+            if (sortedIndex < sorted.size() - 1) {
+                sorted = singlePassInsertionSort(currentUnsorted, sorted, sortedIndex + 1)
             } else {
                 sorted.add(currentUnsorted)
             }
