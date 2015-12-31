@@ -27,6 +27,29 @@ class Sorter {
         sorted
     }
 
+    private static List singlePassBubbleSort(List unsorted) {
+        def sorted = new ArrayList()
+
+        while (unsorted.size() > 1) {
+            def counter = 0
+            def current = unsorted[counter]
+            def next = unsorted[counter + 1]
+
+            if (current < next) {
+                sorted.add(current)
+                unsorted.remove(current)
+            } else {
+                sorted.add(next)
+                unsorted.remove(next)
+            }
+
+        }
+
+        sorted.add(unsorted.get(0))
+
+        sorted
+    }
+
     private static List<Object> singlePassInsertionSort(currentUnsorted, List sorted, Integer sortedCounter) {
         if (currentUnsorted < sorted.get(sortedCounter)) {
             if(sortedCounter.equals(0)) {
@@ -42,29 +65,6 @@ class Sorter {
             }
         }
         sorted
-    }
-
-    private static List singlePassBubbleSort(List elementsToBeSorted) {
-        def sortedElements = new ArrayList()
-
-        while (elementsToBeSorted.size() > 1) {
-            def counter = 0
-            def current = elementsToBeSorted[counter]
-            def next = elementsToBeSorted[counter + 1]
-
-            if (current < next) {
-                sortedElements.add(current)
-                elementsToBeSorted.remove(current)
-            } else {
-                sortedElements.add(next)
-                elementsToBeSorted.remove(next)
-            }
-
-        }
-
-        sortedElements.add(elementsToBeSorted.get(0))
-
-        sortedElements
     }
 
 }
