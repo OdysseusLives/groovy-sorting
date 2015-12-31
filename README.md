@@ -6,7 +6,7 @@
 - Create clear and well-tested sorting algorithms 
 - Investigate parameterized testing
 - Investigate re-using the same test cases for different implementations 
-- Compare the speed of my sorting algoritms
+- Compare the speed of my sorting algorithms
 
 ## Problem space
 
