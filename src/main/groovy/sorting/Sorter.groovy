@@ -15,9 +15,10 @@ class Sorter {
 
     static List insertionSort(List unsorted) {
         def sorted = new ArrayList()
-        def firstUnsortedElement = unsorted.get(0)
 
-        sorted.add(firstUnsortedElement)
+        if(unsorted.size() >= 1) {
+            sorted.add(unsorted.get(0))
+        }
 
         for(def i = 1; i < unsorted.size(); i++) {
             def currentUnsorted = unsorted.get(i)
