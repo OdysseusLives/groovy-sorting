@@ -42,4 +42,13 @@ class SorterSpec extends Specification {
         ["a", "c", "b", "b"] | ["a", "b", "b", "c"] | "should preserve duplicates"
     }
 
+    @Unroll("Merge sort: #testCase")
+    def "merge sort can order a list"(List unsorted, List sorted, String testCase) {
+        expect:
+        MergeSorter.sort(unsorted) == sorted
+
+        where:
+        unsorted | sorted | testCase
+        ["A", "B"] | ["A", "B"] | "should preserve order when already ordered"
+    }
 }

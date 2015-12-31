@@ -47,11 +47,11 @@ Apply same algorithm to sorting cat species
 - Gradle: 2.7
 
 ## Download dependencies and run all tests: 
-```$ gradle```, using the default tasks
+```$ ./gradlew```, using the default tasks via the gradle wrapper
 
 ## How to run
 
-```$ gradle runScript```
+```$ ./gradlew runScript```
 
 Or, most manually: 
 
