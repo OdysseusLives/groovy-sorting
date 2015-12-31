@@ -18,18 +18,28 @@ class Sorter {
         def firstUnsortedElement = unsorted.get(0)
 
         sorted.add(firstUnsortedElement)
-        unsorted.remove(firstUnsortedElement)
 
-        sorted = singlePassInsertionSort(unsorted, sorted)
+        for(def i = 1; i < unsorted.size(); i++) {
+            def currentUnsorted = unsorted.get(i)
+            sorted = singlePassInsertionSort(currentUnsorted, sorted, 0)
+        }
 
         sorted
     }
 
-    private static ArrayList<Object> singlePassInsertionSort(List unsorted, ArrayList sorted) {
-        if (unsorted.get(0) < sorted.get(0)) {
-            sorted = [unsorted.get(0)].plus(sorted)
+    private static List<Object> singlePassInsertionSort(currentUnsorted, List sorted, Integer sortedCounter) {
+        if (currentUnsorted < sorted.get(sortedCounter)) {
+            if(sortedCounter.equals(0)) {
+                sorted = [currentUnsorted].plus(sorted)
+            } else {
+                sorted = sorted[0..sortedCounter - 1].plus([currentUnsorted]).plus(sorted[sortedCounter..sorted.size() - 1])
+            }
         } else {
-            sorted.add(unsorted.get(0))
+            if (sortedCounter < sorted.size() - 1) {
+                sorted = singlePassInsertionSort(currentUnsorted, sorted, sortedCounter + 1)
+            } else {
+                sorted.add(currentUnsorted)
+            }
         }
         sorted
     }

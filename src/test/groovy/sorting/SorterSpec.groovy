@@ -32,8 +32,8 @@ class SorterSpec extends Specification {
         [2.0, 1] | [1, 2.0] | "should order numbers"
         ["Cat", "Car"] | ["Car", "Cat"] | "should order with a deep investigation"
         ["Cat", "car"] | ["Cat", "car"] | "should order capitals before lowercase"
-//        ["B", "A", "D", "C"] | ["A", "B", "C", "D"] | "should order more than two items"
-//        ["E", "B", "D", "A", "C"] | ["A", "B", "C", "D", "E"] | "should order using multiple passes"
+        ["B", "A", "D", "C"] | ["A", "B", "C", "D"] | "should order more than two items"
+        ["E", "B", "D", "A", "C"] | ["A", "B", "C", "D", "E"] | "should order using multiple passes"
     }
 
 }
