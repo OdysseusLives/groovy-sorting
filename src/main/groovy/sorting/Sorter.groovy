@@ -15,15 +15,22 @@ class Sorter {
 
     static List insertionSort(List unsorted) {
         def sorted = new ArrayList()
+        def firstUnsortedElement = unsorted.get(0)
 
-        sorted.add(unsorted.get(0))
+        sorted.add(firstUnsortedElement)
+        unsorted.remove(firstUnsortedElement)
 
-        if(unsorted.get(1) < sorted.get(0)) {
-            sorted = [unsorted.get(1)].plus(sorted)
+        sorted = singlePassInsertionSort(unsorted, sorted)
+
+        sorted
+    }
+
+    private static ArrayList<Object> singlePassInsertionSort(List unsorted, ArrayList sorted) {
+        if (unsorted.get(0) < sorted.get(0)) {
+            sorted = [unsorted.get(0)].plus(sorted)
         } else {
-            sorted.add(unsorted.get(1))
+            sorted.add(unsorted.get(0))
         }
-
         sorted
     }
 
