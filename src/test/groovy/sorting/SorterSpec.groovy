@@ -7,7 +7,7 @@ class SorterSpec extends Specification {
     @Unroll("Bubble sort: #testCase")
     def "bubble sort can order a list"() {
         expect:
-        Sorter.bubbleSort(unsorted) == sorted
+        BubbleSorter.sort(unsorted) == sorted
 
         where:
         unsorted | sorted | testCase
@@ -26,7 +26,7 @@ class SorterSpec extends Specification {
     @Unroll("Insertion sort: #testCase")
     def "insertion sort can order a list"(List unsorted, List sorted, String testCase) {
         expect:
-        Sorter.insertionSort(unsorted) == sorted
+        InsertionSorter.sort(unsorted) == sorted
 
         where:
         unsorted | sorted | testCase
