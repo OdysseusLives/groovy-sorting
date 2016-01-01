@@ -50,5 +50,14 @@ class SorterSpec extends Specification {
         where:
         unsorted | sorted | testCase
         ["A", "B"] | ["A", "B"] | "should preserve order when already ordered"
+        ["B", "A"] | ["A", "B"] | "should order letters"
+        [2.0, 1] | [1, 2.0] | "should order numbers"
+        ["Cat", "Car"] | ["Car", "Cat"] | "should order with a deep investigation"
+        ["Cat", "car"] | ["Cat", "car"] | "should order capitals before lowercase"
+//        ["B", "A", "D", "C"] | ["A", "B", "C", "D"] | "should order more than two items"
+//        ["E", "B", "D", "A", "C"] | ["A", "B", "C", "D", "E"] | "should order using multiple passes"
+//        ["a"] | ["a"] | "should order a list of one"
+//        [] | [] | "should order a list of zero"
+//        ["a", "c", "b", "b"] | ["a", "b", "b", "c"] | "should preserve duplicates"
     }
 }
