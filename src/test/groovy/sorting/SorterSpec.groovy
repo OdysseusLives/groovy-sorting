@@ -31,6 +31,7 @@ class SorterSpec extends Specification {
         expect:
         MergeSorter.sort(unsorted) == sorted
 
+        //todo: complete algorithm and migrate to use common parameterSet
         where:
         unsorted | sorted | testCase
         ["A", "B"] | ["A", "B"] | "should preserve order when already ordered"

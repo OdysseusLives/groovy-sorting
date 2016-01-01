@@ -34,11 +34,11 @@ Apply same algorithm to sorting cat species
 - Algorithms: bubble sort, insertion sort
 - Behavior testing using Spock
 - Run app via gradle task (echoes a 'hello world' answer presently)
+- Basic performance metrics via the Runner
+- Using the runner to sort data
 
 ## Todo
 - Algorithms: merge sort, quicksort
-- Performance test(s)
-- Using the runner to sort data
 - Include/ pull data
 
 ## Installations
