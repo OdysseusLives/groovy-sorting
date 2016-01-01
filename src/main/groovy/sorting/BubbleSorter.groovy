@@ -2,7 +2,7 @@ package sorting
 
 class BubbleSorter extends Sorter {
     static List sort(List unsorted) {
-        def bubbledElements = unsorted
+        List bubbledElements = unsorted.clone() as List
 
         for (def i = 0; i < bubbledElements.size() - 1; i++) {
             bubbledElements = singlePassBubbleSort(bubbledElements)
